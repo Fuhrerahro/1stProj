@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fuhrerahro/1stProj.git/static/css/main.0c37f8b1.css",
+    "main.js": "/Fuhrerahro/1stProj.git/static/js/main.2886063a.js",
+    "index.html": "/Fuhrerahro/1stProj.git/index.html",
+    "main.0c37f8b1.css.map": "/Fuhrerahro/1stProj.git/static/css/main.0c37f8b1.css.map",
+    "main.2886063a.js.map": "/Fuhrerahro/1stProj.git/static/js/main.2886063a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c37f8b1.css",
+    "static/js/main.2886063a.js"
+  ]
+}
