@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Fuhrerahro/1stProj/static/css/main.0c37f8b1.css",
-    "main.js": "/Fuhrerahro/1stProj/static/js/main.2886063a.js",
-    "index.html": "/Fuhrerahro/1stProj/index.html",
-    "main.0c37f8b1.css.map": "/Fuhrerahro/1stProj/static/css/main.0c37f8b1.css.map",
-    "main.2886063a.js.map": "/Fuhrerahro/1stProj/static/js/main.2886063a.js.map"
+    "main.css": "/1stProj/static/css/main.0c37f8b1.css",
+    "main.js": "/1stProj/static/js/main.2886063a.js",
+    "index.html": "/1stProj/index.html",
+    "main.0c37f8b1.css.map": "/1stProj/static/css/main.0c37f8b1.css.map",
+    "main.2886063a.js.map": "/1stProj/static/js/main.2886063a.js.map"
   },
   "entrypoints": [
     "static/css/main.0c37f8b1.css",
