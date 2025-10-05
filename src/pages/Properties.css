@@ -1,0 +1,122 @@
+/* === Container === */
+.properties {
+  max-width: 1300px;
+  margin: 100px auto 60px;
+  padding: 0 2rem;
+  color: #222;
+  text-align: center;
+}
+
+/* === Section Heading === */
+.properties h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* === Grid Layout === */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* === Property Card === */
+.property-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === Image === */
+.property-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.05);
+}
+
+/* === Info Section === */
+.property-info {
+  padding: 1rem 1.2rem 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.property-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.property-info .location {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.property-info .price {
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.8rem;
+}
+
+.property-info .description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* === Button === */
+.btn {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  box-shadow: 0 3px 12px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .properties {
+    padding: 0 1rem;
+  }
+
+  .properties h2 {
+    font-size: 1.6rem;
+  }
+
+  .property-image {
+    height: 200px;
+  }
+}

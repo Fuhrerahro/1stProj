@@ -1,0 +1,6 @@
+.property-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* prevents stretch */
+  border-bottom: 1px solid #eee;
+}
