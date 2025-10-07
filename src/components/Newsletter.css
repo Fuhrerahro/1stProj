@@ -1,0 +1,95 @@
+/* === Newsletter Section Styling === */
+.newsletter-section {
+  position: relative;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1600585154203-37946e3e9e15?auto=format&fit=crop&w=1500&q=80")
+      center/cover no-repeat;
+  color: #fff;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.newsletter-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 60px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  max-width: 700px;
+  width: 100%;
+}
+
+.newsletter-content h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.newsletter-content p {
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  width: 320px;
+  max-width: 90%;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background-color: #c7a96b;
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(199, 169, 107, 0.4);
+}
+
+.newsletter-form button:hover {
+  background-color: #b89454;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199, 169, 107, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .newsletter-content h2 {
+    font-size: 2rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}

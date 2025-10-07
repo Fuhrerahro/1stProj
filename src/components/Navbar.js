@@ -1,41 +1,66 @@
+// src/components/Navbar.js
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  // Define navigation links
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Properties", path: "/properties" },
+    { name: "Agents", path: "/agents" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        {/* Logo */}
-        <div className="navbar-logo">
-          <span className="logo-main">DreamHomes</span>
-          <span className="logo-sub">PH</span>
+      <div className="nav-container">
+        {/* ===== Brand / Logo ===== */}
+        <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
+          XAil<span>Estates</span>
+        </Link>
+
+        {/* ===== Mobile Hamburger Menu ===== */}
+        <div
+          className={`menu-toggle ${isOpen ? "active" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
 
-        {/* Hamburger Icon */}
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-          <div className={`bar ${isOpen ? "open" : ""}`}></div>
-        </div>
+        {/* ===== Navigation Links ===== */}
+        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link
+                to={link.path}
+                className={`nav-item ${
+                  location.pathname === link.path ? "active" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
 
-        {/* Navigation Links */}
-        <div className={`navbar-links ${isOpen ? "active" : ""}`}>
-          <NavLink to="/" className="nav-link" onClick={closeMenu}>
-            Home
-          </NavLink>
-          <NavLink to="/properties" className="nav-link" onClick={closeMenu}>
-            Properties
-          </NavLink>
-          <NavLink to="/contact" className="nav-link" onClick={closeMenu}>
-            Contact
-          </NavLink>
-        </div>
+          {/* ===== CTA Button ===== */}
+          <li>
+            <Link
+              to="/contact"
+              className="btn-primary nav-btn"
+              onClick={() => setIsOpen(false)}
+            >
+              Get Started
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
