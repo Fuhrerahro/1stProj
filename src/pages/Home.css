@@ -954,3 +954,8 @@ main, .page-content, .home-page {
   }
 }
 
+@media (max-width: 768px) {
+  .home-page {
+    padding-top: 80px;
+  }
+}

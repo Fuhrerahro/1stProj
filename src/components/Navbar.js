@@ -1,13 +1,14 @@
 // src/components/Navbar.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
-  // Define navigation links
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Properties", path: "/properties" },
@@ -16,8 +17,26 @@ function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Hide navbar on scroll down, show on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      if (currentY > lastScrollY && currentY > 80) {
+        setIsHidden(true); // scrolling down
+      } else {
+        setIsHidden(false); // scrolling up
+      }
+
+      setLastScrollY(currentY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isHidden ? "hidden" : ""}`}>
       <div className="nav-container">
         {/* ===== Brand / Logo ===== */}
         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>

@@ -125,3 +125,141 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   }
 }
+
+/* === MAIN NAVBAR === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to right, #ffffff, #f9f8f6, #ffffff);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+/* Hide when scrolling down */
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* === CONTAINER === */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === LOGO === */
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.5px;
+}
+.nav-logo span {
+  color: #c89b3c; /* gold accent */
+  font-weight: 700;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #222;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0b4d3b; /* dark green accent */
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #0b4d3b;
+}
+
+/* === CTA BUTTON === */
+.nav-btn {
+  padding: 0.55rem 1.2rem;
+  background: #0b4d3b;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.nav-btn:hover {
+  background: #093f31;
+  transform: translateY(-2px);
+}
+
+/* === MOBILE MENU === */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px auto;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem 0;
+    gap: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-btn {
+    margin-top: 0.5rem;
+  }
+}
+
