@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Prevent top content (like Hero) from hiding under fixed navbar */
+body {
+  scroll-behavior: smooth;
+}
+
+main, .page-content, .home-page {
+  margin-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  main, .page-content, .home-page {
+    margin-top: 100px; /* slightly more room on small screens */
+  }
+}
